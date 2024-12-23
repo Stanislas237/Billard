@@ -1,3 +1,6 @@
+Ce projet est également sur mon linkedIn. N'hésitez pas à me suivre pour plus de contenus !  
+https://www.linkedin.com/posts/stanislas-kamga_css-html-javascript-activity-7271022241365086208-ECls?utm_source=share&utm_medium=member_desktop
+
 # Billard
  Il s'agit d'un jeu de Billard classique qui suit les règles du billard américain.
 # Pourquoi ce jeu ?
