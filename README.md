@@ -16,3 +16,13 @@ https://www.linkedin.com/posts/stanislas-kamga_css-html-javascript-activity-7271
  -- Lorsqu'une balle entre dans une poche pendant le tour d'un des joueurs, on dit qu'il a empoché la balle  
  -- Le tour du joueur se termine lorsque toutes les balles se sont arrêtées de bouger après qu'il ait frappé la blanche  
  -- La partie se termine lorsqu'un joueur a empoché toutes les balles de son groupe, et ensuite la balle noire  
+# Fautes
+ Sont considérés comme faute commise par le joueur du tour en cours, les événements suivants :  
+ -- La balle blanche s'arrête sans toucher d'autres balles   
+ -- La première balle touchée par la blanche est une balle du groupe de l'adversaire  
+ -- La première balle touchée par la blanche est la balle noire  
+ -- La balle blanche est empochée  
+ -- Une balle du groupe de l'adversaire est empochée
+ Dans chacun des cas ci-dessus, l'adversaire commence son tour en posant la balle blanche où il souhaite sur la table  
+ # Mort Subite
+ Lorsque la balle noire est empochée par un joueur avant qu'il n'ait empoché TOUTES les balles de son groupe, il perd immédiatement la partie.
