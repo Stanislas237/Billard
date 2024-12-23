@@ -25,7 +25,7 @@ https://billard.freesite.online/
  -- La première balle touchée par la blanche est une balle du groupe de l'adversaire  
  -- La première balle touchée par la blanche est la balle noire  
  -- La balle blanche est empochée  
- -- Une balle du groupe de l'adversaire est empochée
+ -- Une balle du groupe de l'adversaire est empochée  
  Dans chacun des cas ci-dessus, l'adversaire commence son tour en posant la balle blanche où il souhaite sur la table  
  # Mort Subite
  Lorsque la balle noire est empochée par un joueur avant qu'il n'ait empoché TOUTES les balles de son groupe, il perd immédiatement la partie.
