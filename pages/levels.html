@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billard By Stan.co - Solo</title>
+    <link rel="stylesheet" href="levels.css">
+</head>
+<body>
+    <a href="./../index.html" class="home"></a>
+    <h1>Choisissez un niveau</h1>
+    <table></table>
+    <script>
+        if (!localStorage.hasOwnProperty("MAXLEVEL"))
+            localStorage.setItem("MAXLEVEL", 1)
+        const MAXLEVEL = localStorage.getItem("MAXLEVEL"), TABLE = document.querySelector("table")
+        let tr
+        for (let i = 0; i < 15; i++) {
+            if (!(i % 5)){
+                tr = document.createElement("tr")
+                TABLE.appendChild(tr)
+            }
+            let td = document.createElement("td")
+            if (i < MAXLEVEL){
+                let a = document.createElement("a")
+                a.href = `solo.html?${i+1}`
+                a.innerHTML = `Niveau ${i+1}`
+                td.style.cursor = "pointer"
+                td.appendChild(a)
+            } else{
+                td.innerHTML = `Niveau ${i+1}`
+                td.style.backgroundColor = "rgb(150, 62, 62)"
+            }
+            tr.appendChild(td)
+        }
+    </script>
+</body>
+</html>

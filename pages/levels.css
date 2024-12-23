@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 5%;
+    background-color: darkolivegreen;
+}
+
+a.home{
+    position: absolute;
+    width: 3%;
+    height: 5%;
+    top: 0;
+    left: 0;
+    background: url(./../img/home.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+a:not(.home){
+    color: wheat;
+}
+
+table{
+    width: 80%;
+    min-height: 40%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(41, 132, 68);
+
+    td{
+        border-radius: 10px;
+        border: 1px solid black;
+        text-align: center;
+    }
+}
