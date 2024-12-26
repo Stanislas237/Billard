@@ -1,5 +1,14 @@
 const game = document.querySelector(".table"), value = document.querySelector(".value"), ValueExtrm = [10, 100], TIME = document.querySelector(".timer")
-let whiteBall, Waiting = false, IsOnSolo = false, rect = game.getBoundingClientRect()
+let whiteBall, Waiting = false, IsOnSolo = false, isMouseDown = false, rect = game.getBoundingClientRect(), direction
+
+// Detect Os Type
+const userAgent = navigator.userAgent
+let OSTYPE = "PC"
+
+if (/Android/i.test(userAgent) || /iPhone|iPad|iPod/i.test(userAgent)) {
+    OSTYPE = "Android"
+}
+// End Detect Os Type
 
 function getLength(x, y){
     return Math.sqrt((x * x) + (y * y))
@@ -178,8 +187,25 @@ const a = new (class extends Array{
     }
 })
 
-let direction
-document.addEventListener('mousemove', OnMouseMove)
+if (OSTYPE == "PC"){
+    document.addEventListener('mousemove', OnMouseMove)
+    document.addEventListener("DOMContentLoaded", () => document.addEventListener('mousedown', OnMouseDown))
+}else{
+    document.addEventListener('mousemove', OnMouseMoveOnMobile)
+    document.addEventListener('mousedown', (e) =>{
+        if (e.button === 0) isMouseDown = true
+    })
+    document.addEventListener("DOMContentLoaded", () => document.addEventListener('mouseup', (e) =>{
+        if (e.button === 0 && isMouseDown){
+            isMouseDown = false
+            OnMouseDown(e)
+        }
+    }))    
+}
+
+function OnMouseMoveOnMobile(e){
+    if (isMouseDown) OnMouseMove(e)
+}
 
 function OnMouseMove(e){
     const whiteBallElement = whiteBall.visual
@@ -214,7 +240,12 @@ let Playing = setInterval(() => {
 function EndGame(){
     clearInterval(Playing)
     Playing = null
-    document.removeEventListener("mousemove", OnMouseMove)
+
+    if (OSTYPE == "PC")
+        document.removeEventListener("mousemove", OnMouseMove)
+    else
+        document.removeEventListener("mousemove", OnMouseMoveOnMobile)
+
     if (IsOnSolo){
         alert("Vous avez perdu !")
         window.location.href = "./levels.html"

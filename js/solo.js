@@ -43,12 +43,14 @@ let positionningWhiteBall = false
 let timer = DATA[currentLevel.toString()]["timer"]
 DATA[currentLevel.toString()]["list"].forEach(e => a.push(new Ball(e[0], e[1], e[2])))
 
-document.addEventListener('mousedown', ()=>{
-    if (a[0].vx != 0) return
-    const intensity = Clamp(getLength(direction[0], direction[1]), ValueExtrm[0], ValueExtrm[1])
-    a[0].speed(-direction[0] * intensity / (45 * getLength(direction[0], direction[1])), direction[1] * intensity / (45 * getLength(direction[0], direction[1])))
-    a[0].visual.children[0].style.display = "none"
-})
+function OnMouseDown(e){
+    if (e.button === 0){
+        if (a[0].vx != 0) return
+        const intensity = Clamp(getLength(direction[0], direction[1]), ValueExtrm[0], ValueExtrm[1])
+        a[0].speed(-direction[0] * intensity / (45 * getLength(direction[0], direction[1])), direction[1] * intensity / (45 * getLength(direction[0], direction[1])))
+        a[0].visual.children[0].style.display = "none"
+    }
+}
 
 function empoche(_){
     if (_.classList.contains("blanche")) return

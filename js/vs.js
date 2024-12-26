@@ -48,8 +48,8 @@ for(i = 0; i < 5; i++){
 }
 
 
-document.addEventListener('mousedown', (e)=>{
-    if (a[0].vx != 0) return
+function OnMouseDown(e){
+    if (a[0].vx != 0 || e.button !== 0) return
     
     const intensity = Clamp(getLength(direction[0], direction[1]), ValueExtrm[0], ValueExtrm[1])
     if (!VsState["fault"]){
@@ -63,7 +63,7 @@ document.addEventListener('mousedown', (e)=>{
         a[0].y = Clamp(((e.clientY - rect.top) * 100 / rect.height), 15, 80)
         a[0].position()
     }
-})
+}
 
 function EndTurn(){
     a[0].visual.children[0].style.display = "flex"
@@ -116,7 +116,7 @@ function EndTurn(){
             } else if (!VsState["fault"]){
                 changeTurn = false
                 alert(`J${VsState["turn"]} a empoché une de ses balles. Il peut rejouer`)
-            }
+            } else alert(`J${VsState["turn"]} a empoché une de ses balles`)
         }
     })
 
@@ -125,7 +125,6 @@ function EndTurn(){
     a[0].firstBallTouched = null
     
     if ((VsState["fault"] || changeTurn) && Playing) nextTurn()
-    else changeTurn = true
 }
 
 function nextTurn(){
