@@ -193,7 +193,10 @@ if (OSTYPE == "PC"){
 }else{
     document.addEventListener('mousemove', OnMouseMoveOnMobile)
     document.addEventListener('mousedown', (e) =>{
-        if (e.button === 0) isMouseDown = true
+        if (e.button === 0){
+            isMouseDown = true
+            OnMouseMove(e)
+        }
     })
     document.addEventListener("DOMContentLoaded", () => document.addEventListener('mouseup', (e) =>{
         if (e.button === 0 && isMouseDown){
