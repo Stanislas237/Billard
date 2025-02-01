@@ -17,6 +17,7 @@ https://billard.freesite.online/
  -- Au départ, aucun joueur n'a de couleur définie  
  -- Les joueurs se servent d'une queue, chacun à son tour, pour frapper la balle blanche et empocher les balles de son groupe  
  -- Lorsqu'une balle entre dans une poche pendant le tour d'un des joueurs, on dit qu'il a empoché la balle  
+ -- Le premier joueur à empocher une balle possède immédiatement les balles de la couleur de la balle qu'il vient d'empocher, l'adversaire n'a plus le droit de les empocher et vice versa  
  -- Le tour du joueur se termine lorsque toutes les balles se sont arrêtées de bouger après qu'il ait frappé la blanche  
  -- La partie se termine lorsqu'un joueur a empoché toutes les balles de son groupe, et ensuite la balle noire  
 # Fautes
